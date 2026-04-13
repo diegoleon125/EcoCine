@@ -3,26 +3,26 @@ class MyHeader extends HTMLElement {
         this.innerHTML =`
         <header>
             <button id="side-menu" class="page-btn">|||</button>
-            <a class="page-a" href="../">Titulo interesante</a>
+            <a class="page-a" href="/Cine----">Titulo interesante</a>
             <button id="cart" class="page-btn">cart</button>
         </header>
         <div id="page-overlay"></div>
         <aside id="page-menu">
             <ul class="page-list">
                 <li>
-                    <a class="page-a" href="../peliculas">Películas</a>
+                    <a class="page-a" href="/Cine----/peliculas">Películas</a>
                 </li>
                 <li>
-                    <a class="page-a" href="../cines">Cines</a>
+                    <a class="page-a" href="/Cine----/cines">Cines</a>
                 </li>
                 <li>
-                    <a class="page-a" href="../dulceria">Dulcería</a>
+                    <a class="page-a" href="/Cine----/dulceria">Dulcería</a>
                 </li>
                 <li>
-                    <a class="page-a" href="../promociones">Promociones</a>
+                    <a class="page-a" href="/Cine----/promociones">Promociones</a>
                 </li>
                 <li>
-                    <a class="page-a" href="../contactanos">Contáctanos</a>
+                    <a class="page-a" href="/Cine----/contactanos">Contáctanos</a>
                 </li>
             </ul>
         </aside>
@@ -47,9 +47,9 @@ class MyFooter extends HTMLElement {
     connectedCallback(){
         this.innerHTML =`
         <footer>
-            <a class="page-a" href="../acerca-de-nosotros">Acerca de nosotros</a>
+            <a class="page-a" href="/Cine----/acerca-de-nosotros">Acerca de nosotros</a>
             Pie de pagina
-            <a class="page-a" href="../contactanos">Contáctanos</a>
+            <a class="page-a" href="/Cine----/contactanos">Contáctanos</a>
         </footer>
         `;
     }
