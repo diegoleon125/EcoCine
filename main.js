@@ -1,13 +1,6 @@
 class MyHeader extends HTMLElement {
     connectedCallback(){
         this.innerHTML =`
-        <header>
-            <button id="side-menu" class="page-btn">&#9776;</button>
-            <a id="title-menu" class="page-a" href="/EcoCine/">EcoCine</a>
-            <button id="cart" class="page-btn">
-                <i class="fi fi-rr-shopping-cart"></i>
-            </button>
-        </header>
         <div id="page-overlay"></div>
         <aside id="page-menu">
             <ul class="page-list">
@@ -28,6 +21,14 @@ class MyHeader extends HTMLElement {
                 </li>
             </ul>
         </aside>
+        <div id="header-space"></div>
+        <header>
+            <button id="side-menu" class="page-btn icon">&#9776;</button>
+            <a id="title-menu" class="page-a" href="/EcoCine">EcoCine</a>
+            <button id="cart" class="page-btn icon">
+                <i class="fi fi-rr-shopping-cart"></i>
+            </button>
+        </header>
         `;
 
         const btn_menu = this.querySelector("#side-menu");

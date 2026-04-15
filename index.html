@@ -3,19 +3,13 @@
         <meta charset="UTF-8">
         <title>EcoCine</title>
         <link rel="stylesheet" href="./style.css">
+        <link rel="icon" href="/EcoCine/src/icon.png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     </head>
     <body>
-        <header>
-            <button id="side-menu" class="page-btn">&#9776;</button>
-            <a id="title-menu" class="page-a" href="./">EcoCine</a>
-            <button id="cart" class="page-btn">
-                <i class="fi fi-rr-shopping-cart"></i>
-            </button>
-        </header>
         <div id="page-overlay"></div>
         <aside id="page-menu">
             <ul class="page-list">
@@ -36,9 +30,29 @@
                 </li>
             </ul>
         </aside>
+        <div id="header-space"></div>
+        <header>
+            <button id="side-menu" class="page-btn icon">&#9776;</button>
+            <a id="title-menu" class="page-a" href="./">EcoCine</a>
+            <button id="cart" class="page-btn icon">
+                <i class="fi fi-rr-shopping-cart"></i>
+            </button>
+        </header>
 
+        <div id="banner">
+            <div id="banner-fade"></div>
+            <img id="banner-img" src="/EcoCine/src/banner.jpg" alt="banner">
+            
+        </div>
         <main>
-            Contenido
+            <article id="card-movies" class="main-child">
+                <img class="flex-movie" src="/EcoCine/src/.jpg" alt="movie1">
+                <img class="flex-movie" src="/EcoCine/src/.jpg" alt="movie2">
+                <img class="flex-movie" src="/EcoCine/src/.jpg" alt="movie3">
+            </article>
+            <article class="card main-child">
+
+            </article>
         </main>
 
         <footer>

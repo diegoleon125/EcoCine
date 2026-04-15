@@ -16,6 +16,7 @@
     background-color: var(--color-4th);
 }
 
+
 /* DOCUMENT */
 body{
     display: flex;
@@ -25,13 +26,14 @@ body{
 header{
     justify-content: space-between;
     position: fixed;
+    top: 0;
     z-index: 1000;
     font-size: 2.2em;
-    
 }
 main{
-    margin-top: 10vh;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 200vh;
     background-color: var(--color-3rd);
@@ -48,13 +50,15 @@ header, footer {
     background-color: var(--color-1st);
 }
 
-/* CUSTOM IN DOCUMENT */
-#side-menu, #cart{
-    font-size: 1em;
-}
+
+/* PAGE CONTENT */
 #title-menu{
     font-family: "Pacifico";
     font-weight: normal;
+}
+#header-space{
+    height: 10vh;
+    width: 100%;
 }
 #page-overlay{
     pointer-events: none;
@@ -82,12 +86,16 @@ header, footer {
 #page-menu.active{
     left: 0;
 }
+
+.icon {
+    font-size: 1em;
+}
 .page-btn{
     cursor: pointer;
     height: 100%;
     aspect-ratio: 1;
     border: none;
-    background-color: #0000;
+    background-color: transparent;
     color: var(--color-ft1);
     transition: 0.3s;
 }
@@ -105,4 +113,57 @@ header, footer {
     display: flex;
     flex-direction: column;
     gap: 5vh;
+}
+li::marker{
+    color: var(--color-1st);
+}
+
+/* INDEX CONTENT*/
+#banner{
+    width: 100%;
+    aspect-ratio: 3;
+    background-color: var(--color-3rd);
+}
+#banner-fade{
+    position: absolute;
+    top: 10vh;
+    z-index: 800;
+    width: 100%;
+    aspect-ratio: 3;
+    background: linear-gradient(to bottom,transparent 0%, transparent 30%, var(--color-3rd) 100%);
+}
+#banner-img{
+    width: 100%;
+    opacity: 0.7;
+}
+
+#card-movies{
+    aspect-ratio: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main-child{
+    margin: 5vh;
+    width: calc(100% - 10vh);
+}
+.card{
+    aspect-ratio: 2.5;
+    background: var(--color-2nd);
+    border: dashed 0.5vh var(--color-1st);
+    border-radius: 2vh;
+}
+
+/* HORIZONTALL */
+@media (min-aspect-ratio: 4/5) {
+    html{
+        font-size: 100%;
+    }
+}
+/* VERTICAL */
+@media (max-aspect-ratio: 4/5) {
+    html{
+        font-size: 200%;
+    }
 }
