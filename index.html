@@ -44,12 +44,13 @@
                 </button>
                 <ul>
                     <li>
-                        <button class="page-a">Vaciar carrito</button>
+                        <button id="cart-clear" class="page-a">Vaciar carrito</button>
                     </li>
                     <li>
-                        <a class="page-a page-a-btn" href="/EcoCine/pagar">Procesar compra</a>
+                        <button id="cart-pay" class="page-a page-a-btn">Procesar compra</button>
                     </li>
                 </ul>
+                <h3 id="cart-output" class="text-outline"></h3>
             </div>
         </header>
 
@@ -120,12 +121,9 @@
 
         <script type="module">
             import {Reserva} from "/EcoCine/scripts/Reserva.js";
-            const bdy = document.querySelector("body");
-            const btn_menu = bdy.querySelector("#side-menu");
-            const menu = bdy.querySelector("#page-menu");
-            const overlay = bdy.querySelector("#page-overlay");
-            const btn_cart = bdy.querySelector("#cart");
-
+            const btn_menu = document.querySelector("#side-menu");
+            const menu = document.querySelector("#page-menu");
+            const overlay = document.querySelector("#page-overlay");
             btn_menu.onclick = () => {
                 menu.classList.toggle("active");
                 overlay.classList.toggle("active");
@@ -135,9 +133,29 @@
                 overlay.classList.toggle("active");
             };
 
-            
+            const cart_clear = document.querySelector("#cart-clear");
+            const cart_pay = document.querySelector("#cart-pay");
+            const cart_output = document.querySelector("#cart-output");
+            const r = new Reserva();
+            cart_clear.onclick = () => {
+                r.borrar();
+                cart_output.innerHTML = "Borrado!";
+                cart_output.classList.add("fade-out");
+            };
+            cart_pay.onclick = () => {
+                if (r.is_empty()){
+                    cart_output.innerHTML = "Debe añadir compras al carrito primero!";
+                    cart_output.classList.add("fade-out");
+                } else {
+                    window.location.href = "/EcoCine/pagar";
+                }
+            };
+            cart_output.addEventListener("animationend", () => {
+                cart_output.innerHTML = "";
+                cart_output.classList.remove("fade-out");
+            });
+
             function setPelicula(id){
-                const r = new Reserva();
                 r.movie_id = id;
                 r.seats_ids = [];
                 r.guardarReserva();

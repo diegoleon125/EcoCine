@@ -120,13 +120,10 @@ li::marker{
     flex-direction: column;
     gap: 5vh;
 }
-#page-dropdown:hover > ul{
-    display: flex;
-
-}
 #page-dropdown > ul{
+    pointer-events: none;
     list-style: none;
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 2vh;
     position:absolute;
@@ -137,8 +134,27 @@ li::marker{
     padding: 3vh 1vh;
     border-radius: 2vh;
     background-color: var(--color-2nd);
+    transition: 0.2s;
+    opacity: 0;
 }
-
+#page-dropdown:hover > ul{
+    pointer-events: all;
+    opacity: 1;
+}
+#cart-output{
+    position: absolute;
+    top: 25vh;
+    right: 0;
+    color: var(--color-ft1);
+    text-shadow:
+        0.1em 0.1em 0.1em var(--color-ft2),
+        0 0 0.1em var(--color-ft2);
+    transition: 5s;
+}
+.fade-out{
+    animation: fadeout 1s forwards;
+    animation-delay: 2s;
+}
 .icon {
     font-size: 2.2em;
 }
@@ -265,12 +281,18 @@ li::marker{
 #grid-movie > h4{
     grid-area: desc;
 }
-#grid-movie > div{
+#table-hor{
     grid-area: hor;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     background-color: var(--color-3rd);
 }
+#table-hor thead{
+    background-color: var(--color-2nd);
+    height: 14%;  
+}
+#table-hor td:nth-child(odd){
+    background-color: var(--color-4th);
+}
+
 /* PAGAR */
 #grid-cartlist{
     display: grid;
@@ -331,4 +353,9 @@ li::marker{
             "poster desc"
             "hor hor";
     }
+}
+
+@keyframes fadeout {
+    0%{ opacity: 1;}
+    100% {opacity: 0;}
 }

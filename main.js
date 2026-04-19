@@ -35,29 +35,16 @@ class MyHeader extends HTMLElement {
                 </button>
                 <ul>
                     <li>
-                        <button class="page-a">Vaciar carrito</button>
+                        <button id="cart-clear" class="page-a">Vaciar carrito</button>
                     </li>
                     <li>
-                        <a class="page-a page-a-btn" href="/EcoCine/pagar">Procesar compra</a>
+                        <button id="cart-pay" class="page-a page-a-btn">Procesar compra</button>
                     </li>
                 </ul>
+                <h3 id="cart-output" class="text-outline"></h3>
             </div>
         </header>
         `;
-
-        const btn_menu = this.querySelector("#side-menu");
-        const menu = this.querySelector("#page-menu");
-        const overlay = this.querySelector("#page-overlay");
-        const btn_cart = this.querySelector("#cart");
-
-        btn_menu.onclick = () => {
-            menu.classList.toggle("active");
-            overlay.classList.toggle("active");
-        };
-        overlay.onclick = () => {
-            menu.classList.toggle("active");
-            overlay.classList.toggle("active");
-        };
     }
 }
 class MyFooter extends HTMLElement {
@@ -73,3 +60,40 @@ class MyFooter extends HTMLElement {
 
 customElements.define('custom-header',MyHeader);
 customElements.define('custom-footer',MyFooter);
+
+import {Reserva} from "/EcoCine/scripts/Reserva.js";
+document.addEventListener("DOMContentLoaded", () => {
+    const btn_menu = document.querySelector("#side-menu");
+    const menu = document.querySelector("#page-menu");
+    const overlay = document.querySelector("#page-overlay");
+    btn_menu.onclick = () => {
+        menu.classList.toggle("active");
+        overlay.classList.toggle("active");
+    };
+    overlay.onclick = () => {
+        menu.classList.toggle("active");
+        overlay.classList.toggle("active");
+    };
+
+    const cart_clear = document.querySelector("#cart-clear");
+    const cart_pay = document.querySelector("#cart-pay");
+    const cart_output = document.querySelector("#cart-output");
+    const r = new Reserva();
+    cart_clear.onclick = () => {
+        r.borrar();
+        cart_output.innerHTML = "Borrado!";
+        cart_output.classList.add("fade-out");
+    };
+    cart_pay.onclick = () => {
+        if (r.is_empty()){
+            cart_output.innerHTML = "Debe añadir compras al carrito primero!";
+            cart_output.classList.add("fade-out");
+        } else {
+            window.location.href = "/EcoCine/pagar";
+        }
+    };
+    cart_output.addEventListener("animationend", () => {
+        cart_output.innerHTML = "";
+        cart_output.classList.remove("fade-out");
+    });
+});
