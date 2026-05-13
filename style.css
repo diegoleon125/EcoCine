@@ -125,8 +125,9 @@ li::marker{
     width: 22vh;
     margin: 0;
     padding: 3vh 1vh;
+    border: 0.1em solid var(--color-1st);
     border-radius: 2vh;
-    background-color: var(--color-2nd);
+    background-color: var(--color-3rd);
     transition: 0.2s;
     opacity: 0;
 }
@@ -195,8 +196,8 @@ footer > section > section * {
     padding: 0 1em;
 }
 /* common elements */
-.icon {
-    font-size: 2.2em;
+.icon{
+    font-size: 2.2em !important;
     aspect-ratio: 1;
 }
 .logo{
@@ -209,6 +210,7 @@ footer > section > section * {
     padding: 0.5em;
     background: none;
     color: var(--color-ft1);
+    font-size: 100%;
     transition: 0.3s;
 }
 .header-btn {
@@ -225,6 +227,8 @@ footer > section > section * {
 }
 .bg-1{background-color: var(--color-1st);}
 .bg-2{background-color: var(--color-2nd);}
+.bg-3{background-color: var(--color-3rd);}
+
 
 /* INDEX CONTENT*/
 #banner{
