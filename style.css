@@ -11,7 +11,7 @@
     --color-4th: #4fe8c2;
     --color-5th: #e7ffe4;
     --color-ft1: #fff;
-    --color-ft2: #000;
+    --color-ft2: #062914;
 }
 ::selection{
     background-color: var(--color-4th);
@@ -26,7 +26,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: var(--color-5th);
+    background-color: var(--color-ft1);
 }
 header{
     display: flex;
@@ -152,10 +152,7 @@ li::marker{
 /* MAIN */
 main > *{
     margin: 2vh 5vw;
-    width: calc(100% - 10vh);
-}
-main > h1{
-    margin: 5vh 5vh 0 5vh;
+    width: calc(100% - 10vw);
 }
 #btn-return-top{
     display: flex;
@@ -165,8 +162,10 @@ main > h1{
     z-index: 2000;
     bottom: 1vw;
     right: 1vw;
-    height: 2em;
-    border-radius: 40%;
+    border-radius: 40% !important;
+    animation: dissapear both, fadeout reverse;
+    animation-timeline: scroll(root);
+    animation-range: 0px 130px;
 }
 
 /* FOOTER */
@@ -199,6 +198,8 @@ footer > section > section * {
 .icon{
     font-size: 2.2em !important;
     aspect-ratio: 1;
+    height: 2em;
+    border-radius: 50%;
 }
 .logo{
     height: 2em;
@@ -223,7 +224,7 @@ footer > section > section * {
     transition: 0.3s;
 }
 .page-a:hover, .page-btn:hover{
-    transform: scale(1.2);
+    scale: 1.2;
 }
 .bg-1{background-color: var(--color-1st);}
 .bg-2{background-color: var(--color-2nd);}
@@ -254,8 +255,14 @@ footer > section > section * {
     opacity: 0.8;
 }
 
-#flex-movies{
-    aspect-ratio: 2;
+#top-movies {
+    margin: 0;
+    overflow: hidden;
+    padding: 2vh;
+    width: calc(100% - 4vh);
+    background-color: var(--color-5th);
+}
+.flex-section{
     display: flex;
     justify-content: space-between;
 }
@@ -263,6 +270,8 @@ footer > section > section * {
     cursor: pointer;
     margin: 1vh;
     aspect-ratio: 2/3;
+    flex: 1;
+    padding: 0;
     border: none;
     background-color: var(--color-3rd); /*edit*/
     transition: 0.3s;
@@ -270,20 +279,22 @@ footer > section > section * {
 .btn-movie:hover{
     scale: 1.08;
 }
+.btn-movie > img {
+    width: 100%;
+    height: 100%;
+}
 
 .card{
     display: flex;
-    background: var(--color-3rd);
-    border: dashed 0.5vh var(--color-ft2);
+    background: var(--color-5th);
+    color: var(--color-1st);
+    border: solid 0.5vh var(--color-2nd);
     border-radius: 2vh;
-    overflow: hidden;
+    overflow:hidden;
     transition: 0.3s;
 }
 .card * {
-    margin: 1vh;
-}
-.card:hover{
-    scale: 1.05;
+    text-align: left;
 }
 .card-reverse{
     flex-direction: row-reverse;
@@ -291,23 +302,49 @@ footer > section > section * {
 .card-column{
     flex-direction: column;
 }
+
+.card h1 {
+    color: var(--color-1st);
+}
+
 .card-1{
     max-height: 50vw;
     justify-content: space-between;
 }
-.card-1 > * {
-    flex: 1;
+.card-1 > .div-info{
+    display: flex;
+    margin: 2% 5%;
+    width: 40%;
+    gap: 3vw;
 }
-.card-1 > div{
-    aspect-ratio: 5/3;
+.card-1 > .div-info > .div-logo{
+    width: 30%;
 }
-.card-1 > div > h3{
-    text-align: left;
+.card-1 > .div-info > .div-txt{
+    width: 70%;
+    overflow-wrap: break-word;
 }
-.card-1 > img{
-    /*edit*/
-    border-radius: 1vh;
+.card-1 > .div-info > .div-txt > * {
+    margin: 0.5vh 0;
+}
+.card-1 > .div-img{
+    width: 50%;
+    overflow: hidden;
+}
+.div-img-normal{
+    border-radius: 0 20% 7.5% 0 / 0 100% 100% 0;
+}
+.div-img-reverse{
+    border-radius: 20% 0 0 7.5% / 100% 0 0 100%;
+}
+.div-img > img{
+    width: 100%;
+    height: 100%;
     background-color: var(--color-2nd);
+    transition: 0.3s;
+}
+.div-img > img:hover{
+    scale: 1.08;
 }
 
 /* PELICULAS */
@@ -350,15 +387,21 @@ footer > section > section * {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     min-width: 5em;
-    background-color: var(--color-3rd);
 }
-#grid-cinemas > button{
+#grid-cinemas > *{
+    justify-content: space-around !important;
     cursor: pointer;
     margin: 1vh;
     aspect-ratio: 1;
-    background-color: var(--color-2nd);
-    border:  0.5vh dashed var(--color-1st);
     transition: 0.3s;
+}
+#grid-cinemas img{
+    aspect-ratio: 5/4;
+    border-radius: 2vh;
+    margin: 0.5em;
+} 
+#grid-cinemas h2{
+    text-align: center;
 }
 #grid-cinemas > button:hover{
     scale: 1.1;
@@ -426,4 +469,9 @@ footer > section > section * {
 @keyframes fadeout {
     0%{ opacity: 1;}
     100% {opacity: 0;}
+}
+
+@keyframes dissapear {
+    from{pointer-events: none; visibility: hidden;}
+    to{pointer-events: all; visibility:visible;}
 }

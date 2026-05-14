@@ -47,67 +47,100 @@
         <a id="btn-return-top" class="page-a icon bg-2" href="#">
             <i class="fi fi-br-arrow-up"></i>
         </a>
-
+        
         <div id="banner">
             <div></div>
             <img src="/EcoCine/src/banner.jpg" alt="banner">
         </div>
-        
         <main>
-            <h1>TOP DE LA SEMANA</h1>
-            <article id="flex-movies">
-                <button class="btn-movie" onclick="setPelicula(1)">
-                    <img src="/EcoCine/src/.jpg" alt="movie1">
-                </button>
-                <button class="btn-movie" onclick="setPelicula(2)">
-                    <img src="/EcoCine/src/.jpg" alt="movie2">
-                </button>
-                <button class="btn-movie" onclick="setPelicula(3)">
-                    <img src="/EcoCine/src/.jpg" alt="movie3">
-                </button>
-            </article>
+            <section id="top-movies">
+                <h1>TOP DE LA SEMANA</h1>
+                <article class="flex-section">
+                    <button class="btn-movie" onclick="setPelicula(1)">
+                        <img src="/EcoCine/peliculas/src/hoppers.jpg" alt="movie1">
+                    </button>
+                    <button class="btn-movie" onclick="setPelicula(2)">
+                        <img src="/EcoCine/peliculas/src/michael.jpg" alt="movie2">
+                    </button>
+                    <button class="btn-movie" onclick="setPelicula(3)">
+                        <img src="/EcoCine/peliculas/src/smgalaxy.jpg" alt="movie3">
+                    </button>
+                </article>
+            </section>
 
+            <h1>Explora EcoCine</h1>
 
-            <a class="card card-1 card-reverse" href="/EcoCine/peliculas/">
-                <img src="/EcoCine/src/.jpg" alt="Películas">
-                <div>
-                    <h1>Películas</h1>
-                    <h3>
-                        "Encuentra el título perfecto para hoy y disfruta de una función inolvidable.<br>
-                        Elige tu historia favorita y deja que la magia del cine haga el resto."
-                    </h3>
+            <section class="card card-1">
+                <div class="div-img div-img-normal">
+                    <img src="/EcoCine/src/banner.jpg" alt="Películas">
                 </div>
-            </a>
-            <a class="card card-1" href="/EcoCine/cines/">
-                <img src="/EcoCine/src/.jpg" alt="Cines">
-                <div>
-                    <h1>Cines</h1>
-                    <h3>
-                        "Encuentra la sede más cercana y disfruta de la mejor tecnología en cada sala.<br>
-                        Vive una experiencia única con la comodidad y el sonido que solo nosotros te ofrecemos."
-                    </h3>
+                <div class="div-info">
+                    <div class="div-logo">
+                        <img class="icon bg-2" src="" alt="">
+                    </div>
+                    <div class="div-txt">
+                        <h1>Películas</h1>
+                        <p>
+                            Descubre la cartelera completa con estrenos, próximas funciones y tus géneros favoritos.
+                        </p>
+                        <a class="page-a page-btn bg-1" href="/EcoCine/peliculas/">Explorar peliculas &RightArrow;</a>
+                    </div>
                 </div>
-            </a>
-            <a class="card card-1 card-reverse" href="/EcoCine/dulceria/">
-                <img src="/EcoCine/src/.jpg" alt="Dulcería">
-                <div>
-                    <h1>Dulcería</h1>
-                    <h3>
-                        "Acompaña tu función con el sabor inigualable de nuestras palomitas y snacks favoritos.<br>
-                        Haz que cada escena sea más especial disfrutando de tus antojos preferidos."
-                    </h3>
+            </section>
+
+            <section class="card card-1 card-reverse">
+                <div class="div-img div-img-reverse">
+                    <img src="/EcoCine/src/.jpg" alt="Cines">
                 </div>
-            </a>
-            <a class="card card-1" href="/EcoCine/promociones/">
-                <img src="/EcoCine/src/.jpg" alt="Promociones">
-                <div>
-                    <h1>Promociones</h1>
-                    <h3>
-                        "Encuentra el título perfecto para hoy y disfruta de una función inolvidable.<br>
-                        No dejes pasar los beneficios especiales que tenemos preparados para ti hoy."
-                    </h3>
+                <div class="div-info">
+                    <div class="div-logo">
+                        <img class="icon bg-2" src="" alt="">
+                    </div>
+                    <div class="div-txt">
+                        <h1>Cines</h1>
+                        <p>
+                            Encuentra nuestras sedes ecoamigables cerca de ti y disfruta de la mejor experiencia.
+                        </p>
+                        <a class="page-a page-btn bg-1" href="/EcoCine/cines/">Ver cines &RightArrow;</a>
+                    </div>
                 </div>
-            </a>
+            </section>
+
+            <section class="card card-1">
+                <div class="div-img div-img-normal">
+                    <img src="/EcoCine/src/.jpg" alt="Dulcería">
+                </div>
+                <div class="div-info">
+                    <div class="div-logo">
+                        <img class="icon bg-2" src="" alt="">
+                    </div>
+                    <div class="div-txt">
+                        <h1>Dulcería</h1>
+                        <p>
+                            Acompaña tu función con opciones deliciosas y sostenibles. ¡Cuidamos el planeta en cada detalle!
+                        </p>
+                        <a class="page-a page-btn bg-1" href="/EcoCine/dulceria/">Ver dulcería &RightArrow;</a>
+                    </div>
+                </div>
+            </section>
+            <section class="card card-1 card-reverse">
+                <div class="div-img div-img-reverse">
+                    <img src="/EcoCine/src/.jpg" alt="Cines">
+                </div>
+                <div class="div-info">
+                    <div class="div-logo">
+                        <img class="icon bg-2" src="" alt="">
+                    </div>
+                    <div class="div-txt">
+                        <h1>Promociones</h1>
+                        <p>
+                            Aprovecha nuestras promociones exclusivas y beneficios especiales para ti.
+                        </p>
+                        <a class="page-a page-btn bg-1" href="/EcoCine/promociones/">Ver promociones &RightArrow;</a>
+                    </div>
+                </div>
+            </section>
+
         </main>
 
         <footer>

@@ -17,22 +17,22 @@
 
         <main>
             <h1>CINES</h1>
-            <h2>Elija su cine antes de buscar horarios!</h2>
+            <h2>Escoja su cine antes de buscar horarios!</h2>
             <article id="grid-cinemas">
-                <button onclick="setCinema('SJL')">
-                    <img src="/EcoCine/cines/.jpg" alt="SJL">
-                    <h2>SJL</h2>
+                <button class="card card-column" onclick="setCinema('SJL')">
+                    <img src="/EcoCine/cines/src/sjl.jpg" alt="">
+                    <h2>EC SJL</h2>
                 </button>
-                <button onclick="setCinema('Campoy')">
-                    <img src="/EcoCine/cines/.jpg" alt="Campoy">
-                    <h2>Campoy</h2>
+                <button class="card card-column" onclick="setCinema('LimaCentro')">
+                    <img src="/EcoCine/cines/src/limacentro.jpg" alt="">
+                    <h2>EC Lima Centro</h2>
                 </button>
-                <button onclick="setCinema('LimaCentro')">
-                    <img src="/EcoCine/cines/.jpg" alt="LimaCentro">
-                    <h2>Lima Centro</h2>
+                <button class="card card-column" onclick="setCinema('Miraflores')">
+                    <img src="/EcoCine/cines/src/miraflores.jpg" alt="">
+                    <h2>EC Miraflores</h2>
                 </button>
                 <!-- Solo para pruebas-->
-                <button onclick="clearCinema()" style="aspect-ratio: 3;">
+                <button class="card" onclick="clearCinema()" style="aspect-ratio: 3;">
                     borrar cine
                 </button>
             </article>
