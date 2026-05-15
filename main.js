@@ -6,7 +6,7 @@ class MyHeader extends HTMLElement {
             <ul>
                 <li><a class="page-a" href="/EcoCine/peliculas">Películas</a></li>
                 <li><a class="page-a" href="/EcoCine/cines">Cines</a></li>
-                <li><a class="page-a" href="/EcoCine/dulceria">Dulcería</a></li>
+                <li><a class="page-a" href="/EcoCine/dulceria/combos">Dulcería</a></li>
                 <li><a class="page-a" href="/EcoCine/promociones">Promociones</a></li>
                 <li><a class="page-a" href="/EcoCine/contactanos">Contáctanos</a></li>
             </ul>
@@ -44,7 +44,7 @@ class MyFooter extends HTMLElement {
     connectedCallback(){
         this.innerHTML =`
         <footer>
-            <section>
+            <section class="flex-section">
                 <section>
                     <img src="/EcoCine/src/logo.png" alt="logo" class="logo">
                     <p>En Ecocine creemos que el entretenimiento y el cuidado del planeta pueden ir de la mano.</p>
@@ -76,7 +76,7 @@ class MyFooter extends HTMLElement {
                             <a href="/EcoCine/cines">Cines</a>
                         </li>
                         <li>
-                            <a href="/EcoCine/dulceria">Dulcería</a>
+                            <a href="/EcoCine/dulceria/combos">Dulcería</a>
                         </li>
                         <li>
                             <a href="/EcoCine/promociones">Promociones</a>
@@ -86,7 +86,7 @@ class MyFooter extends HTMLElement {
                 <section>
                     <h3>Acerca de nosotros</h3>
                     <p>Somos el primer cine comprometido 100% con el medio ambiente. Salas bien cuidadas, compras sostenibles y experiencias inolvidables.</p>
-                    <a href="/EcoCine/acerca-de-nosotros/" class="page-a page-btn bg-1">Conócenos más &rightarrow;</a>
+                    <a href="/EcoCine/acerca-de-nosotros" class="page-a page-btn bg-1">Conócenos más &rightarrow;</a>
                 </section>
             </section>
             <section>

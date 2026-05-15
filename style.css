@@ -41,7 +41,6 @@ main{
     display: flex;
     flex-direction: column;
     width: clamp(0px,100%,150vh);
-    min-height: 80vh;
     margin: auto;
     color: var(--color-ft2);
 }
@@ -171,29 +170,18 @@ main > *{
 /* FOOTER */
 footer * {
     color: var(--color-ft1);
-}
-footer > section {
-    display: flex;
-    justify-content: space-around;
-    min-height: 10vh;
-}
-footer > :nth-child(2){
-    align-items: center;
+    text-align: left;
+    margin: 0.5em 0;
 }
 footer > section > section {
     margin: 1em;
     flex: 1;
     text-align: left;
-
-}
-footer > section > section * {
-    margin: 0.5em 0;
-    text-align: left;
 }
 #footer-list > li{
-    text-align: left;
     padding: 0 1em;
 }
+
 /* common elements */
 .icon{
     font-size: 2.2em !important;
@@ -225,6 +213,38 @@ footer > section > section * {
 }
 .page-a:hover, .page-btn:hover{
     scale: 1.2;
+}
+
+.flex-section{
+    display: flex;
+    justify-content: space-around;
+}
+.flex-child{
+    flex: 1;
+}
+
+.grid-section{
+    display: grid;
+    min-height: 5em;
+}
+
+.grid-1-1 > *{
+    cursor: pointer;
+    margin: 1vh;
+    aspect-ratio: 1;
+    transition: 0.3s;
+}
+.grid-1-1 img{
+    aspect-ratio: 5/4;
+    border-radius: 2vh;
+    margin: 0.5em;
+    background-color: var(--color-3rd);
+} 
+.grid-1-1 h2,.grid-1-1 h3,.grid-1-1 p{
+    text-align: center;
+}
+.grid-1-1 > button:hover{
+    scale: 1.1;
 }
 .bg-1{background-color: var(--color-1st);}
 .bg-2{background-color: var(--color-2nd);}
@@ -261,10 +281,6 @@ footer > section > section * {
     padding: 2vh;
     width: calc(100% - 4vh);
     background-color: var(--color-5th);
-}
-.flex-section{
-    display: flex;
-    justify-content: space-between;
 }
 .btn-movie{
     cursor: pointer;
@@ -348,11 +364,6 @@ footer > section > section * {
 }
 
 /* PELICULAS */
-#grid-movies, #grid-movie{
-    display: grid;
-    min-height: 5em;
-    background-color: var(--color-ft1);
-}
 #grid-movie{
     min-height: 70vh;
 }
@@ -383,28 +394,9 @@ footer > section > section * {
 }
 
 /* CINES */
-#grid-cinemas{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    min-width: 5em;
-}
-#grid-cinemas > *{
-    justify-content: space-around !important;
-    cursor: pointer;
-    margin: 1vh;
-    aspect-ratio: 1;
-    transition: 0.3s;
-}
-#grid-cinemas img{
-    aspect-ratio: 5/4;
-    border-radius: 2vh;
-    margin: 0.5em;
-} 
-#grid-cinemas h2{
-    text-align: center;
-}
-#grid-cinemas > button:hover{
-    scale: 1.1;
+
+/* DULCERIA */
+#grid-dulceria{
 }
 /* PAGAR */
 #table-cartlist{
@@ -429,17 +421,19 @@ footer > section > section * {
 #promo-submit{
     color: var(--color-ft2);
 }
+
+
 /* HORIZONTALL */
 @media (min-aspect-ratio: 4/5) {
     html{
         font-size: 100%;
     }
-    #grid-movies{
+    .grid-section{
         grid-template-columns: 1fr 1fr 1fr;
     }
     #grid-movie{
         aspect-ratio: 1;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr 2fr !important;
         grid-template-rows: 0.5fr 1.5fr 3fr;
         grid-template-areas:
             "poster title"
@@ -452,12 +446,12 @@ footer > section > section * {
     html{
         font-size: 200%;
     }
-    #grid-movies{
+    .grid-section{
         grid-template-columns: 1fr 1fr;
     }
     #grid-movie{
         aspect-ratio: 2/3;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr !important;
         grid-template-rows: 0.5fr 3fr 3fr;
         grid-template-areas:
             "title title"
