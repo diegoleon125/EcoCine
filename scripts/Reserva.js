@@ -1,9 +1,17 @@
 export class Reserva {
+    //Clase singleton para tener 1 instancia de reserva local
     constructor(){
-        this.cargarReserva();
+        this.#cargarReserva();
+        window.addEventListener("storage", (event) => {
+            if (event.key === "reserva"){
+                if (event.newValue) {
+                    this.#cargarReserva();
+                }
+            } 
+        });
     }
 
-    cargarReserva(){
+    #cargarReserva(){
         const saved = JSON.parse(localStorage.getItem("reserva"));
         if (saved){
             this.movie_id = saved.movie_id;
@@ -13,8 +21,14 @@ export class Reserva {
         } else{
             this.default();
         }
-        
     }
+    default(){
+        this.movie_id = null;
+        this.hor_id = null;
+        this.seats_ids = [];
+        this.combos_ids = [];
+    }
+
     guardarReserva(){
         localStorage.setItem("reserva", JSON.stringify(this));
     }
@@ -26,12 +40,6 @@ export class Reserva {
     borrar(){
         this.default();
         localStorage.removeItem("reserva");
-    }
-    default(){
-        this.movie_id = null;
-        this.hor_id = null;
-        this.seats_ids = [];
-        this.combos_ids = [];
     }
 
     is_empty(){

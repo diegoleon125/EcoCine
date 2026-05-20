@@ -14,14 +14,14 @@ class MyHeader extends HTMLElement {
         <div id="header-space"></div>
         <header>
             <button id="side-menu" class="page-btn header-btn icon">
-                &#9776;
+                <i id="icon-lines"></i>
             </button>
             <a class="page-a" href="/EcoCine">
                 <img id="title-menu" src="/EcoCine/src/logo.png" alt="titulo">
             </a>
             <div id="page-dropdown">
                 <button id="cart" class="page-btn header-btn icon">
-                    <i class="fi fi-rr-shopping-cart"></i>
+                    <i id="icon-cart"></i>
                 </button>
                 <ul>
                     <li>
@@ -34,8 +34,8 @@ class MyHeader extends HTMLElement {
                 <h3 id="cart-output" class="text-outline"></h3>
             </div>
         </header>
-        <a id="btn-return-top" class="page-a icon bg-2" href="#">
-            <i class="fi fi-br-arrow-up"></i>
+        <a id="btn-return-top" class="page-a bg-2 icon" href="#">
+            <i id="icon-arrow"></i>
         </a>
         `;
     }
@@ -48,18 +48,18 @@ class MyFooter extends HTMLElement {
                 <section>
                     <img src="/EcoCine/src/logo.png" alt="logo" class="logo">
                     <p>En Ecocine creemos que el entretenimiento y el cuidado del planeta pueden ir de la mano.</p>
-                    <nav>
-                        <a href="https://www.instagram.com/cineplanetoficial/" target="_blank" class="icon">
-                            <img src="" alt="ig">
+                    <na class="flex-section">
+                        <a href="https://www.instagram.com/cineplanetoficial/" target="_blank" class="page-btn header-btn icon">
+                            <i id="icon-ig"></i>
                         </a>
-                        <a href="https://www.facebook.com/cinestarbenavides?locale=es_LA" target="_blank" class="icon">
-                            <img src="" alt="fb">
+                        <a href="https://www.facebook.com/cinestarbenavides?locale=es_LA" target="_blank" class="page-btn header-btn icon">
+                            <i id="icon-fb"></i>
                         </a>
-                        <a href="https://www.tiktok.com/@cinepolis.pe" target="_blank" class="icon">
-                            <img src="" alt="tk">
+                        <a href="https://www.tiktok.com/@cinepolis.pe" target="_blank" class="page-btn header-btn icon">
+                            <i id="icon-tk"></i>
                         </a>
-                        <a href="https://www.youtube.com/@CinemarkPeru" target="_blank" class="icon">
-                            <img src="" alt="yt">
+                        <a href="https://www.youtube.com/@CinemarkPeru" target="_blank" class="page-btn header-btn icon">
+                            <i id="icon-yt"></i>
                         </a>
                     </nav>
                 </section>
@@ -89,7 +89,10 @@ class MyFooter extends HTMLElement {
                     <a href="/EcoCine/acerca-de-nosotros" class="page-a page-btn bg-1">Conócenos más &rightarrow;</a>
                 </section>
             </section>
-            <section>
+            <section id="footer-end" class="flex-section">
+                <button id="theme" class="page-btn header-btn icon">
+                    <i id="icon-theme"></i>Cambiar tema
+                </button>
                 <span>&copy; 2026 EcoCine. Todos los derechos reservados</span>
                 <span>Hecho con &#9825; por un mundo mejor</span>
             </section>
@@ -103,6 +106,10 @@ customElements.define('custom-footer',MyFooter);
 
 import {Reserva} from "/EcoCine/scripts/Reserva.js";
 document.addEventListener("DOMContentLoaded", () => {
+    let dark = localStorage.getItem("dark-mode");
+    const root = document.documentElement.style;
+    if (dark == undefined) dark = "false";
+    changeTheme(dark);
     const btn_menu = document.querySelector("#side-menu");
     const menu = document.querySelector("#page-menu");
     const overlay = document.querySelector("#page-overlay");
@@ -137,4 +144,36 @@ document.addEventListener("DOMContentLoaded", () => {
         cart_output.innerHTML = "";
         cart_output.classList.remove("fade-out");
     });
+
+
+    const theme = document.querySelector("#theme");
+    theme.onclick = () => {
+        let dark = localStorage.getItem("dark-mode");
+        const root = document.documentElement.style;
+        let nuevovalor = dark == "true"? "false" : "true";
+        localStorage.setItem("dark-mode",nuevovalor);
+        changeTheme(nuevovalor);
+    };
+    function changeTheme(valor){
+        if (valor == "false"){
+                    root.setProperty('--color-1st', '#062914');
+                    root.setProperty('--color-2nd', '#2d7825');
+                    root.setProperty('--color-3rd', '#8EC247');
+                    root.setProperty('--color-4th', '#4fe8c2');
+                    root.setProperty('--color-5th', '#e7ffe4');
+                    root.setProperty('--color-4th', '#4fe8c2');
+                    root.setProperty('--color-6th', '#fff');
+                    root.setProperty('--color-ft1', '#fff');
+                    root.setProperty('--color-ft2', '#062914');
+                } else {
+                    root.setProperty('--color-1st', '#062914');
+                    root.setProperty('--color-2nd', '#0b4421');
+                    root.setProperty('--color-3rd', '#2d7825');
+                    root.setProperty('--color-4th', '#4fe8c2');
+                    root.setProperty('--color-5th', '#61931b');
+                    root.setProperty('--color-6th', '#8EC247');
+                    root.setProperty('--color-ft1', '#fff');
+                    root.setProperty('--color-ft2', '#fff');
+                }
+    }
 });
