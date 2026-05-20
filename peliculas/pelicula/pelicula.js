@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let tr = thead.insertRow();
     for (let f = 0; f < 7; f++){
         const th = document.createElement("th");
+        th.innerHTML = dias[f];
         tr.appendChild(th);
 
     }
@@ -22,15 +23,18 @@ document.addEventListener("DOMContentLoaded", () => {
             let columna = fila.insertCell();
         }
     }
+    añadirHorario(0,12,14);
 });
 
 function añadirHorario(columna,hor_inicio, hor_final){
     const rows = tbody.rows;
-    const a = document.createElement("button");
-    a.classList.add("page-a-btn");
-    a.innerHTML = hor_inicio + ":" + hor_final;
+    const a = document.createElement("a");
+    a.classList.add("page-a");
+    a.classList.add("bg-1");
+    a.classList.add("page-btn");
+    a.innerHTML = hor_inicio + "-" + hor_final;
     a.href= "/EcoCine/peliculas/pelicula/boleteria";
-    for(let i = tbody - 1; i >= 0; i--){
+    for(let i = 0; i <= tbody.rows.length; i++){
         let celda = rows[i].cells[columna];
         if(celda.innerHTML.trim() === ""){
             celda.appendChild(a);
