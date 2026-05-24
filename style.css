@@ -267,8 +267,8 @@ footer > section > section {
 #icon-arrow {mask-position: -4.05em 0;}
 #icon-movie {mask-position: 0 -1.35em;}
 #icon-cine {mask-position: -1.35em -1.35em;}
-#icon-dulceria {mask-position: -2.7em -1.35em;}
-#icon-promos {mask-position: -4.05em -1.35em;}
+#icon-dulceria {mask-position: -2.6em -1.35em;}
+#icon-promos {mask-position: -3.95em -1.30em;}
 #icon-ig {mask-position: 0 -2.7em;}
 #icon-fb {mask-position: -1.35em -2.7em;}
 #icon-tk {mask-position: -2.7em -2.7em;}
@@ -352,17 +352,15 @@ footer > section > section {
 }
 
 .card-1{
-    max-height: 50vw;
     justify-content: space-between;
+    height: auto;
+    align-items: stretch;
 }
 .card-1 > .div-info{
     display: flex;
     margin: 2% 5%;
     width: 40%;
     gap: 3vw;
-}
-.card-1 > .div-info > .div-logo{
-    width: 30%;
 }
 .card-1 > .div-info > .div-txt{
     width: 70%;
@@ -373,7 +371,9 @@ footer > section > section {
 }
 .card-1 > .div-img{
     width: 50%;
+    position: relative;
     overflow: hidden;
+    opacity: 0.8;
 }
 .div-img-normal{
     border-radius: 0 20% 7.5% 0 / 0 100% 100% 0;
@@ -382,8 +382,10 @@ footer > section > section {
     border-radius: 20% 0 0 7.5% / 100% 0 0 100%;
 }
 .div-img > img{
+    position: absolute;
     width: 100%;
     height: 100%;
+    object-fit: cover;
     background-color: var(--color-2nd);
     transition: 0.3s;
 }
@@ -455,7 +457,6 @@ footer > section > section {
     color: var(--color-ft2);
     margin: 0 10%;
 }
-/* CINES */
 
 /* DULCERIA */
 .card.active{
