@@ -9,12 +9,40 @@
         <link rel="stylesheet" href="/EcoCine/style.css">
         <link rel="icon" href="/EcoCine/src/icon.png">
         <script type="module" src="/EcoCine/main.js" defer></script>
+        <script type="module" src="/EcoCine/promociones/promociones.js"></script>
     </head>
     <body>
         <custom-header></custom-header>
 
         <main>
-            Promociones
+            <h1>PROMOCIONES</h1>
+
+            <section class="card flex-centered">
+                <h1>No olvides confirmar tus promociones para añadirlos al carrito:</h1>
+                <a class="page-a page-btn bg-1" href="/EcoCine/promociones/confirmar">Confirmar promociones &rightarrow;</a>
+            </section>
+            <section id="grid-promos" class="grid-section grid-1-1">
+                <button class="card flex-column page-a" onclick="toggleProduct(this,12022)">
+                    <img src="" alt="promo">
+                    <h3>PROMO1: Cancha Grande + 3 Gaseosas Medianas</h3>
+                    <p>S/. 41.99</p>
+                </button>
+                <button class="card flex-column page-a" onclick="toggleProduct(this,12022)">
+                    <img src="" alt="promo">
+                    <h3>PROMO2: Hotdog + Gaseosa Mediana</h3>
+                    <p>S/9.99</p>
+                </button>
+                <button class="card flex-column page-a" onclick="toggleProduct(this,12022)">
+                    <img src="" alt="promo">
+                    <h3>PROMO3: Cancha Regular + Nachos + Gaseosa Mediana</h3>
+                    <p>S/15.99</p>
+                </button>
+                <button class="card flex-column page-a" onclick="toggleProduct(this,12022)">
+                    <img src="" alt="promo">
+                    <h3>PROMO4: 3 Canchas Regulares + 2 Gaseosas Regulares</h3>
+                    <p>S/22.00</p>
+                </button>
+            </section>
         </main>
 
         <custom-footer></custom-footer>

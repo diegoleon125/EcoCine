@@ -44,24 +44,28 @@ main{
     width: clamp(0px,100%,150vh);
     margin: auto;
     color: var(--color-ft2);
+    overflow: hidden;
 }
 header, footer {
     user-select: none;
     width: 100%;
     background-color: var(--color-1st);
 }
-
-h1 {
-    color: var(--color-2nd);
+button {
+    color: var(--color-ft1) !important;
+    text-align: center !important;
+}
+button > * {
+    color: var(--color-ft2);
+}
+h1, h2{
+    color: var(--color-2nd) !important;
 }
 img{
     user-select: none;
 }
 a{
     text-decoration: none;
-    color: var(--color-ft1);
-}
-button {
     color: var(--color-ft1);
 }
 li {
@@ -169,14 +173,18 @@ main > *{
 }
 
 /* FOOTER */
+
 footer * {
     color: var(--color-ft1);
     text-align: left;
     padding: 0.5em 0;
 }
+footer nav.flex-section{
+    flex-wrap: wrap;
+}
 footer > section > section {
-    margin: 1em;
-    flex: 1;
+    padding: 1em;
+    flex:1;
     text-align: left;
 }
 #footer-list > li{
@@ -215,6 +223,19 @@ footer > section > section {
 .flex-section{
     display: flex;
     justify-content: space-around;
+}
+.flex-centered{
+    align-items: center !important;
+}
+.flex-reverse{
+    flex-direction: row-reverse;
+}
+.flex-column{
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.flex-between{
+    justify-content: space-between;
 }
 .flex-child{
     flex: 1;
@@ -340,21 +361,8 @@ footer > section > section {
 .card * {
     text-align: left;
 }
-.card-reverse{
-    flex-direction: row-reverse;
-}
-.card-column{
-    flex-direction: column;
-}
-
 .card h1 {
     color: var(--color-ft2);
-}
-
-.card-1{
-    justify-content: space-between;
-    height: auto;
-    align-items: stretch;
 }
 .card-1 > .div-info{
     display: flex;
@@ -413,14 +421,21 @@ footer > section > section {
 }
 #table-hor{
     grid-area: hor;
-    background-color: var(--color-3rd);
+    background-color: var(--color-1st);
+    border-radius: 1em;
+    border: solid 0.2vh var(--color-1st);
+    overflow: hidden;
 }
 #table-hor thead{
     background-color: var(--color-2nd);
+    color: var(--color-ft1);
     height: 3em;
 }
 #table-hor td:nth-child(odd){
-    background-color: var(--color-4th);
+    background-color: var(--color-3rd);
+}
+#table-hor td:nth-child(even){
+    background-color: var(--color-5th);
 }
 #table-hor tr{
     height: 14.8%;
@@ -428,7 +443,10 @@ footer > section > section {
 /* BOLETERIA*/
 #grid-seats{
     background-color: var(--color-5th);
-    aspect-ratio: 1;
+    border: solid 0.5vh var(--color-1st);
+    border-radius: 1em;
+    overflow: hidden;
+    aspect-ratio: 1 ;
     grid-template-columns: repeat(15,1fr);
     grid-template-rows: repeat(12,1fr);
     gap: 2% 1%;
@@ -462,6 +480,14 @@ footer > section > section {
 .card.active{
     background-color: var(--color-3rd);
 }
+/* PROMOS */
+#grid-promos > :first-child{
+    grid-row: span 2;
+    grid-column: span 2;
+}
+#flex-promos *{
+    margin: 0.2em;
+}
 /* PAGAR */
 #table-cartlist{
     min-height: 5em;
@@ -486,6 +512,10 @@ footer > section > section {
     color: var(--color-ft2);
 }
 
+/* CONTACTANOS */
+#grid-contactanos > *{
+    background-color: var(--color-3rd);
+}
 
 /* HORIZONTALL */
 @media (min-aspect-ratio: 4/5) {
@@ -502,9 +532,6 @@ footer > section > section {
             "poster title"
             "poster desc"
             "hor hor";
-    }
-    #grid-seats{
-        width: 50%;
     }
 }
 /* VERTICAL */
@@ -524,8 +551,8 @@ footer > section > section {
             "desc"
             "hor";
     }
-    #grid-seats{
-        width: 100%;
+    #flex-boleteria{
+        flex-direction: column;
     }
 }
 

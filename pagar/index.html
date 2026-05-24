@@ -9,15 +9,18 @@
         <link rel="stylesheet" href="/EcoCine/style.css">
         <link rel="icon" href="/EcoCine/src/icon.png">
         <script type="module" src="/EcoCine/main.js" defer></script>
-        <script type="module" src="./pagar.js"></script>
+        <script type="module" src="/EcoCine/pagar/pagar.js"></script>
     </head>
     <body>
         <custom-header></custom-header>
 
         <main>
-            <a class="card card-column" style="aspect-ratio: 10;" href="/EcoCine/promociones">
+            <h1>CARRITO</h1>
+            <section class="card flex-centered">
                 <h2>Buscas descuentos y promociones? vísita la sección de Promociones!</h2>
-            </a>
+                <a class="page-a page-btn bg-1" href="">Promociones &RightArrow;</a>
+            </section>
+
             <table id="table-cartlist">
                 <thead>
                     <tr>
@@ -28,25 +31,55 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>COMBO 2: 2 CANCHAS GRANDES + 2 GASEOSAS</td>
-                        <td style="display: flex; justify-content: space-between;">
-                            <button class="page-btn">-</button>
+                        <td>COMBO1: Cancha Regular + Gaseosa Regular</td>
+                        <td class="flex-section flex-between">
+                            <button class="btn-less">-</button>
                             <h2>1</h2>
-                            <button class="page-btn">+</button>
+                            <button class="btn-more">+</button>
                         </td>
-                        <td>S/. 32.00</td>
+                        <td>S/. 11.99</td>
+                    </tr>
+                    <tr>
+                        <td>Chicha</td>
+                        <td class="flex-section flex-between">
+                            <button class="btn-less">-</button>
+                            <h2>1</h2>
+                            <button class="btn-more">+</button>
+                        </td>
+                        <td>S/. 5.00</td>
+                    </tr>
+                    <tr>
+                        <td>Hotdog</td>
+                        <td class="flex-section flex-between">
+                            <button class="btn-less">-</button>
+                            <h2>1</h2>
+                            <button class="btn-more">+</button>
+                        </td>
+                        <td>S/. 10.00</td>
+                    </tr>
+                    <tr>
+                        <td>PROMO3: Cancha Regular + Nachos + Gaseosa Mediana</td>
+                        <td class="flex-section flex-between">
+                            <button class="btn-less">-</button>
+                            <h2>1</h2>
+                            <button class="btn-more">+</button>
+                        </td>
+                        <td>S/. 15.99</td>
                     </tr>
                 </tbody>
             </table>
-            <article class="card card-column" style="aspect-ratio: 4;">
-                <h1>Tu anterior compra vino con un código secreto? Ingresa uno para obtener un descuento en esta compra!</h1>
-                <form>
+            <button type="submit" class="page-btn bg-1">Continuar con la compra</button>
+            
+            <article class="card flex-centered">
+                <h2>Tu anterior compra vino con un código secreto? Ingresa uno para obtener un descuento en esta compra!</h2>
+                <form class="flex-section flex-column">
                     <input id="promo-input" type="text" placeholder="XXXX-XXXX-XXXX-XXXX">
-                    <button id="promo-submit" type="submit">Subir</button>
+                    <button id="promo-submit" class="page-btn bg-1" type="submit">Canjear descuento</button>
                 </form>
             </article>
-            <article class="card card-column">
-                <div style="display: flex; flex-direction: row;">
+            <h2>Total</h2>
+            <article class="card flex-column">
+                <div class="flex-section">
                     <table id="table-total">
                         <tbody>
                             <tr>
@@ -63,7 +96,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <form style="flex: 1;">
+                    <div>
                         <label>Tarjeta de credito:</label>
                         <input id="pago-tarjeta" type="text" placeholder="XXXX-XXXX-XXXX-XXXX"> <br>
                         <label>Fecha de vencimiento:</label>
@@ -71,12 +104,10 @@
                         <input type="number" min="1" max="99"> <br>
                         <label>CVV/CVC:</label>
                         <input type="number" min="0" max="999" minlength="3" maxlength="3">
-                        <button id="promo-submit" type="submit">Subir</button>
-                    </form>
+                        <button id="pagar" class="page-btn bg-1">Procesar compra</button>
+                    </div>
                 </div>
-                <div class="card">
 
-                </div>
             </article>
             
         </main>

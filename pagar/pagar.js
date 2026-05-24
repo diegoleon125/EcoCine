@@ -9,4 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const list = document.querySelector("#table-cartlist");
     const thead = list.querySelector("thead");
     
+    const pagar = document.querySelector("#pagar");
+    pagar.onclick = () => {
+        window.location.href = "/Ecocine/pagar/confirmado";
+    };
 })

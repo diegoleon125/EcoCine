@@ -48,7 +48,7 @@ class MyFooter extends HTMLElement {
                 <section>
                     <img src="/EcoCine/src/logo.png" alt="logo" class="logo">
                     <p>En Ecocine creemos que el entretenimiento y el cuidado del planeta pueden ir de la mano.</p>
-                    <na class="flex-section">
+                    <nav class="flex-section">
                         <a href="https://www.instagram.com/cineplanetoficial/" target="_blank" class="page-btn header-btn icon">
                             <i id="icon-ig"></i>
                         </a>

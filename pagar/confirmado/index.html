@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Película - EcoCine</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="/EcoCine/style.css">
+        <link rel="icon" href="/EcoCine/src/icon.png">
+        <script type="module" src="/EcoCine/main.js" defer></script>
+        <script type="module" src="./confirmado.js"></script>
+    </head>
+    <body>
+        <custom-header></custom-header>
+
+        <main>
+            <h1>Compra realizada correctamente!</h1>
+            <section class="card flex-section">
+                <section class="flex-section flex-column">
+                    <h2>QR de la compra:</h2>
+                    <img id="qr" alt="qr">
+                </section>
+                <section class="flex-section flex-column">
+                    <h2>ID de la compra:</h2>
+                    <h4 id="compra-id"></h4>
+                    <a class="page-btn bg-2" href="/EcoCine/">Regresar al inicio &rightarrow;</a>
+                </section>
+            </section>
+        </main>
+
+        <custom-footer></custom-footer>
+    </body>
+</html>
