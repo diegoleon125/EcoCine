@@ -1,8 +1,9 @@
+/*
 const cine = localStorage.getItem("cinema");
 if (cine == null){
     window.location.href = "/EcoCine/cines";
 }
-
+*/
 let tbody;
 
 document.addEventListener("DOMContentLoaded", () => {

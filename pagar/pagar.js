@@ -5,6 +5,7 @@ if (r.is_empty()){
     window.location.href = "/EcoCine/";
 }
 */
+/*
 document.addEventListener("DOMContentLoaded", () => {
     const list = document.querySelector("#table-cartlist");
     const thead = list.querySelector("thead");
@@ -14,3 +15,4 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "/Ecocine/pagar/confirmado";
     };
 })
+*/

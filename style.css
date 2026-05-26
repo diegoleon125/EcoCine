@@ -28,6 +28,8 @@ body{
     flex-direction: column;
     min-height: 100%;
     background-color: var(--color-6th);
+    font-size: 20px;
+
 }
 header{
     display: flex;
@@ -275,7 +277,7 @@ footer > section > section {
 }
 
 .card-1 {
-    border: solid 2px var(--color-2nd);
+    border: solid 1px var(--color-2nd);
 }
 .card-1 > .div-info{
     display: flex;
@@ -307,6 +309,14 @@ footer > section > section {
 }
 .card-2 > * , .card-3 > *{
     margin: 0.7em;
+}
+
+.card-4{
+    border-radius: 2em;
+    padding: 1em;
+    margin: 0.2em;
+    overflow: hidden;
+    word-break: break-all;
 }
 
 .div-img-normal{
@@ -558,7 +568,38 @@ footer > section > section {
     margin: 2%;
     
 }
-
+/* ACERCA DE NOSOTROS */
+#about-us *, #nuestra-esencia *, #nuestro-compromiso *{
+    padding: 0.5em 1em;
+}
+#about-us {
+    background: url("/EcoCine/acerca-de-nosotros/src/aboutus.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 4em;
+}
+#about-us *{
+    color: var(--color-ft1);
+}
+#about-us > section {
+    width: 40%;
+    
+}
+#about-us-logo{
+    width: 60%;
+}
+#nuestra-esencia-flex > *{
+    word-break: break-all;
+}
+#nuestro-compromiso {
+    background: var(--color-1st);
+    margin: 1em;
+    border-radius: 2em;
+}
+#nuestro-compromiso * {
+    color:var(--color-ft1);
+}
 /* HORIZONTALL */
 @media (min-aspect-ratio: 4/5) {
     html{
