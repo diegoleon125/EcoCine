@@ -227,6 +227,9 @@ footer > section > section {
 .flex-centered{
     align-items: center !important;
 }
+.flex-centered > h2 {
+    text-align: center;
+}
 .flex-reverse{
     flex-direction: row-reverse;
 }
@@ -247,23 +250,83 @@ footer > section > section {
 }
 
 .grid-1-1 > *{
-    cursor: pointer;
     margin: 1vh;
     aspect-ratio: 1;
     transition: 0.3s;
 }
-.grid-1-1 img{
-    aspect-ratio: 5/4;
-    border-radius: 2vh;
-    margin: 0.5em;
-    background-color: var(--color-3rd);
-} 
-.grid-1-1 h2,.grid-1-1 h3,.grid-1-1 p{
-    text-align: center;
-}
 .grid-1-1 > button:hover{
     scale: 1.1;
 }
+
+.card{
+    display: flex;
+    background: var(--color-5th);
+    color: var(--color-ft2);
+    border: solid 0.5vh var(--color-2nd);
+    border-radius: 2vh;
+    overflow:hidden;
+    transition: 0.3s;
+}
+.card * {
+    text-align: left;
+}
+.card h1 {
+    color: var(--color-ft2);
+}
+
+.card-1 {
+    border: solid 2px var(--color-2nd);
+}
+.card-1 > .div-info{
+    display: flex;
+    margin: 2% 5%;
+    gap: 3vw;
+}
+.card-1 > .div-info > .div-txt{
+    width: 70%;
+    overflow-wrap: break-word;
+}
+.card-1 > .div-info > .div-txt > * {
+    margin: 0.5vh 0;
+}
+.card-1 > .div-img{
+    width: 60%;
+    position: relative;
+    overflow: hidden;
+    opacity: 0.8;
+}
+
+.card-2{
+    border: dotted 0.7vh var(--color-2nd);   
+}
+.card-3{
+    border: solid 0.5vh var(--color-2nd);
+    border-radius: 0;
+    border-left: dashed 0.5vh var(--color-2nd);
+    border-right: dashed 0.5vh var(--color-2nd);
+}
+.card-2 > * , .card-3 > *{
+    margin: 0.7em;
+}
+
+.div-img-normal{
+    border-radius: 0 20% 7.5% 0 / 0 100% 100% 0;
+}
+.div-img-reverse{
+    border-radius: 20% 0 0 7.5% / 100% 0 0 100%;
+}
+.div-img > img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: var(--color-2nd);
+    transition: 0.3s;
+}
+.div-img > img:hover{
+    scale: 1.08;
+}
+
 .icon{
     height: 5em;
     aspect-ratio: 1;
@@ -349,57 +412,6 @@ footer > section > section {
     height: 100%;
 }
 
-.card{
-    display: flex;
-    background: var(--color-5th);
-    color: var(--color-ft2);
-    border: solid 0.5vh var(--color-2nd);
-    border-radius: 2vh;
-    overflow:hidden;
-    transition: 0.3s;
-}
-.card * {
-    text-align: left;
-}
-.card h1 {
-    color: var(--color-ft2);
-}
-.card-1 > .div-info{
-    display: flex;
-    margin: 2% 5%;
-    width: 40%;
-    gap: 3vw;
-}
-.card-1 > .div-info > .div-txt{
-    width: 70%;
-    overflow-wrap: break-word;
-}
-.card-1 > .div-info > .div-txt > * {
-    margin: 0.5vh 0;
-}
-.card-1 > .div-img{
-    width: 50%;
-    position: relative;
-    overflow: hidden;
-    opacity: 0.8;
-}
-.div-img-normal{
-    border-radius: 0 20% 7.5% 0 / 0 100% 100% 0;
-}
-.div-img-reverse{
-    border-radius: 20% 0 0 7.5% / 100% 0 0 100%;
-}
-.div-img > img{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background-color: var(--color-2nd);
-    transition: 0.3s;
-}
-.div-img > img:hover{
-    scale: 1.08;
-}
 
 /* PELICULA */
 #grid-movie{
@@ -439,6 +451,25 @@ footer > section > section {
 }
 #table-hor tr{
     height: 14.8%;
+}
+/* CINES */
+.card-img {
+    padding: 0;
+    overflow: hidden;
+}
+.card-img img{
+    border-radius: 2vh;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-3rd);
+} 
+.card-img h2{
+    color: var(--color-ft1) !important;
+    position:relative;
+    align-self: center;
+    bottom: 3em;
+    padding: 1em 0;
+    background-color: rgb(from var(--color-1st) r g b / 0.7);
 }
 /* BOLETERIA*/
 #grid-seats{
@@ -480,6 +511,15 @@ footer > section > section {
 .card.active{
     background-color: var(--color-3rd);
 }
+.grid-dulceria img{
+    aspect-ratio: 5/4;
+    border-radius: 2vh;
+    margin: 0.5em;
+    background-color: var(--color-3rd);
+} 
+.grid-dulceria *{
+    text-align: center;
+}
 /* PROMOS */
 #grid-promos > :first-child{
     grid-row: span 2;
@@ -515,12 +555,17 @@ footer > section > section {
 /* CONTACTANOS */
 #grid-contactanos > *{
     background-color: var(--color-3rd);
+    margin: 2%;
+    
 }
 
 /* HORIZONTALL */
 @media (min-aspect-ratio: 4/5) {
     html{
         font-size: 100%;
+    }
+    .card-1 > .div-info{
+        width: 40%;
     }
     .grid-section{
         grid-template-columns: 1fr 1fr 1fr;
@@ -538,6 +583,9 @@ footer > section > section {
 @media (max-aspect-ratio: 4/5) {
     html{
         font-size: 200%;
+    }
+    .card-1 > .div-info{
+        width: 70%;
     }
     .grid-section{
         grid-template-columns: 1fr 1fr;
