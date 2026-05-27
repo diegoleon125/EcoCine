@@ -225,6 +225,7 @@ footer > section > section {
 .flex-section{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .flex-centered{
     align-items: center !important;
@@ -315,8 +316,6 @@ footer > section > section {
     border-radius: 2em;
     padding: 1em;
     margin: 0.2em;
-    overflow: hidden;
-    word-break: break-all;
 }
 
 .div-img-normal{
@@ -562,12 +561,6 @@ footer > section > section {
     color: var(--color-ft2);
 }
 
-/* CONTACTANOS */
-#grid-contactanos > *{
-    background-color: var(--color-3rd);
-    margin: 2%;
-    
-}
 /* ACERCA DE NOSOTROS */
 #about-us *, #nuestra-esencia *, #nuestro-compromiso *{
     padding: 0.5em 1em;
@@ -590,7 +583,7 @@ footer > section > section {
     width: 60%;
 }
 #nuestra-esencia-flex > *{
-    word-break: break-all;
+    max-width: 20%;
 }
 #nuestro-compromiso {
     background: var(--color-1st);
