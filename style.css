@@ -491,7 +491,8 @@ footer > section > section {
     border: solid 0.5vh var(--color-1st);
     border-radius: 1em;
     overflow: hidden;
-    aspect-ratio: 1 ;
+    width: 100%;
+    aspect-ratio: 1;
     grid-template-columns: repeat(15,1fr);
     grid-template-rows: repeat(12,1fr);
     gap: 2% 1%;
