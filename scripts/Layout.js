@@ -107,9 +107,9 @@ customElements.define('custom-footer',MyFooter);
 import {Reserva} from "/EcoCine/scripts/Reserva.js";
 document.addEventListener("DOMContentLoaded", () => {
     let dark = localStorage.getItem("dark-mode");
-    const root = document.documentElement.style;
     if (dark == undefined) dark = "false";
     changeTheme(dark);
+
     const btn_menu = document.querySelector("#side-menu");
     const menu = document.querySelector("#page-menu");
     const overlay = document.querySelector("#page-overlay");
@@ -125,19 +125,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const cart_clear = document.querySelector("#cart-clear");
     const cart_pay = document.querySelector("#cart-pay");
     const cart_output = document.querySelector("#cart-output");
-    const r = new Reserva();
     cart_clear.onclick = () => {
-        r.borrar();
+        Reserva.borrar();
         cart_output.innerHTML = "Borrado!";
         cart_output.classList.add("fade-out");
     };
     cart_pay.onclick = () => {
-        /* if (r.is_empty()){
-            cart_output.innerHTML = "Debe añadir compras al carrito primero!";
-            cart_output.classList.add("fade-out");
-        } else {
-            */
-            window.location.href = "/EcoCine/pagar";
+        /*
+            if (Reserva.is_empty()){
+                cart_output.innerHTML = "Debe añadir compras al carrito primero!";
+                cart_output.classList.add("fade-out");
+            } else { */
+                window.location.href = "/EcoCine/pagar";
         //}
     };
     cart_output.addEventListener("animationend", () => {
@@ -145,35 +144,34 @@ document.addEventListener("DOMContentLoaded", () => {
         cart_output.classList.remove("fade-out");
     });
 
-
     const theme = document.querySelector("#theme");
     theme.onclick = () => {
         let dark = localStorage.getItem("dark-mode");
-        const root = document.documentElement.style;
         let nuevovalor = dark == "true"? "false" : "true";
         localStorage.setItem("dark-mode",nuevovalor);
         changeTheme(nuevovalor);
     };
     function changeTheme(valor){
+        const root = document.documentElement.style;
         if (valor == "false"){
-                    root.setProperty('--color-1st', '#062914');
-                    root.setProperty('--color-2nd', '#2d7825');
-                    root.setProperty('--color-3rd', '#8EC247');
-                    root.setProperty('--color-4th', '#4fe8c2');
-                    root.setProperty('--color-5th', '#e7ffe4');
-                    root.setProperty('--color-4th', '#4fe8c2');
-                    root.setProperty('--color-6th', '#fff');
-                    root.setProperty('--color-ft1', '#fff');
-                    root.setProperty('--color-ft2', '#062914');
-                } else {
-                    root.setProperty('--color-1st', '#062914');
-                    root.setProperty('--color-2nd', '#0b4421');
-                    root.setProperty('--color-3rd', '#2d7825');
-                    root.setProperty('--color-4th', '#4fe8c2');
-                    root.setProperty('--color-5th', '#61931b');
-                    root.setProperty('--color-6th', '#8EC247');
-                    root.setProperty('--color-ft1', '#fff');
-                    root.setProperty('--color-ft2', '#fff');
-                }
+            root.setProperty('--color-1st', '#062914');
+            root.setProperty('--color-2nd', '#2d7825');
+            root.setProperty('--color-3rd', '#8EC247');
+            root.setProperty('--color-4th', '#4fe8c2');
+            root.setProperty('--color-5th', '#e7ffe4');
+            root.setProperty('--color-4th', '#4fe8c2');
+            root.setProperty('--color-6th', '#fff');
+            root.setProperty('--color-ft1', '#fff');
+            root.setProperty('--color-ft2', '#062914');
+        } else {
+            root.setProperty('--color-1st', '#062914');
+            root.setProperty('--color-2nd', '#0b4421');
+            root.setProperty('--color-3rd', '#2d7825');
+            root.setProperty('--color-4th', '#4fe8c2');
+            root.setProperty('--color-5th', '#61931b');
+            root.setProperty('--color-6th', '#8EC247');
+            root.setProperty('--color-ft1', '#fff');
+            root.setProperty('--color-ft2', '#fff');
+        }
     }
 });

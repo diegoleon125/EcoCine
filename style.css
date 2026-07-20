@@ -256,15 +256,14 @@ footer > section > section {
     min-height: 5em;
 }
 
-.grid-1-1 > *{
+.grid-6-7 > *{
     margin: 1vh;
-    aspect-ratio: 1;
+    aspect-ratio: 6/7;
     transition: 0.3s;
 }
-.grid-1-1 > button:hover{
+.grid-6-7 > button:hover{
     scale: 1.1;
 }
-
 .card{
     display: flex;
     background: var(--color-5th);
@@ -527,13 +526,21 @@ footer > section > section {
     background-color: var(--color-3rd);
 }
 .grid-dulceria img{
-    aspect-ratio: 5/4;
+    flex: 1 1 0%;
+    height: 0;
+    width: calc(100% - 1em);
+    min-width: 0;
+    object-fit: contain;
+    background-color: var(--color-ft1);
     border-radius: 2vh;
     margin: 0.5em;
-    background-color: var(--color-3rd);
 } 
 .grid-dulceria *{
     text-align: center;
+}
+.grid-dulceria > .card {
+    overflow: visible;
+    cursor: pointer;
 }
 /* PROMOS */
 #grid-promos > :first-child{
