@@ -1,4 +1,4 @@
-import {Reserva} from "/EcoCine/scripts/Reserva.js";
+import { Reserva } from "scripts/Reserva.js";
 
 function toggleProduct(btn, product_id){
     btn.classList.toggle("active");

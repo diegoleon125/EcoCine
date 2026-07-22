@@ -354,7 +354,7 @@ footer > section > section {
     height: 80%;
     padding: 0 !important;
     background-color: var(--color-ft1);
-    mask-image: url("/EcoCine/src/iconos.png");
+    mask-image: url("src/iconos.png");
     mask-size: 400% 400%;
 }
 #icon-cart {mask-position: 0 0;}
@@ -381,23 +381,8 @@ footer > section > section {
     width: 100%;
     aspect-ratio: 3;
 }
-#banner > div{
-    position: absolute;
-    top: 10vh;
-    z-index: 800;
-    width: 100%;
-    opacity: 0.8;
-    aspect-ratio: 3;
-    background: linear-gradient(
-        to bottom,
-        var(--color-1st) 0%,
-        transparent 10%,
-        transparent 30%,
-        var(--color-1st) 100%);
-}
 #banner > img{
     width: 100%;
-    opacity: 0.8;
 }
 
 #top-movies {
@@ -583,7 +568,7 @@ footer > section > section {
     padding: 0.5em 1em;
 }
 #about-us {
-    background: url("/EcoCine/acerca-de-nosotros/src/aboutus.jpeg");
+    background: url("acerca-de-nosotros/src/aboutus.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

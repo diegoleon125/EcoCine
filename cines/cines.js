@@ -1,13 +1,13 @@
-import {Reserva} from "/EcoCine/scripts/Reserva.js";
+import { Reserva } from "/scripts/Reserva.js";
 
 
 function setCinema(cinema){
     localStorage.setItem("cinema",cinema);
     const r = new Reserva();
     if (r.movie_id){
-        window.location.href = "/EcoCine/peliculas/pelicula";
+        window.location.href = "peliculas/pelicula";
     } else {
-        window.location.href = "/EcoCine/peliculas";
+        window.location.href = "peliculas";
     }
 };
 function clearCinema(){

@@ -1,7 +1,7 @@
 /*
 const cine = localStorage.getItem("cinema");
 if (cine == null){
-    window.location.href = "/EcoCine/cines";
+    window.location.href = "cines";
 }
 */
 let tbody;
@@ -34,7 +34,7 @@ function añadirHorario(columna,hor_inicio, hor_final){
     a.classList.add("bg-1");
     a.classList.add("page-btn");
     a.innerHTML = hor_inicio + "-" + hor_final;
-    a.href= "/EcoCine/peliculas/pelicula/boleteria";
+    a.href= "peliculas/pelicula/boleteria";
     for(let i = 0; i <= tbody.rows.length; i++){
         let celda = rows[i].cells[columna];
         if(celda.innerHTML.trim() === ""){

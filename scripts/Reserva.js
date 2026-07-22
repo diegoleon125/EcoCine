@@ -1,19 +1,32 @@
+import { PeliculaDAO } from "./PeliculaDAO.js"
 export class Reserva {
     constructor(){
         //Actualizar para todas las páginas
         window.addEventListener('storage', (event) => {
             if (!event.key) return;
             switch (event.key){
-                case 'cine':
-                    this.updateCine(); break;
                 case 'dulceria':
                     this.updateDulceria(); break;
+                case 'cine':
+                    this.updateCine(); break;
+                case 'reserva':
+                    this.updateReserva(); break;
                 case 'asientos':
                     this.updateAsientos(); break;
             }
         });
     }
 
+    static async setPelicula(pelicula_id){
+        const peliculaValida = await PeliculaDAO.getPelicula(pelicula_id);
+        if (peliculaValida === null) return false;
+        
+        let reserva = JSON.parse(localStorage.getItem('reserva'));
+        if (reserva === null) reserva = {};
+        reserva.movie_id = pelicula_id;
+        localStorage.setItem('reserva', JSON.stringify(reserva));
+        return true;
+    }
     #cargarReserva(){
         const saved = JSON.parse(localStorage.getItem("reserva"));
         if (saved){

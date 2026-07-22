@@ -1,8 +1,8 @@
-import {Reserva} from "/EcoCine/scripts/Reserva.js";
+import { Reserva } from "scripts/Reserva.js";
 const r = new Reserva();
 /*
 if (r.is_empty()){
-    window.location.href = "/EcoCine/";
+    window.location.href = "";
 }
 */
 /*
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const pagar = document.querySelector("#pagar");
     pagar.onclick = () => {
-        window.location.href = "/Ecocine/pagar/confirmado";
+        window.location.href = "pagar/confirmado";
     };
 })
 */

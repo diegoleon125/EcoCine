@@ -5,28 +5,27 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/EcoCine/style.css">
-        <script type="module" src="/EcoCine/scripts/Layout.js" defer></script>
-        <link rel="icon" href="/EcoCine/src/icon.png">
+        <link rel="stylesheet" href="./style.css">
+        <script type="module" src="./scripts/Layout.js" defer></script>
+        <link rel="icon" href="./src/icon.png">
     </head>
     <body>
         <custom-header></custom-header>
         
         <div id="banner">
-            <div></div>
-            <img src="/EcoCine/src/banner.jpg" alt="banner">
+            <img src="src/banner.jpg" alt="banner">
         </div>
         <section id="top-movies">
                 <h1>TOP DE LA SEMANA</h1>
                 <article class="flex-section">
                     <button class="btn-movie" onclick="setPelicula(1)">
-                        <img src="/EcoCine/peliculas/src/hoppers.jpg" alt="movie1">
+                        <img src="peliculas/src/hoppers.jpg" alt="movie1">
                     </button>
                     <button class="btn-movie" onclick="setPelicula(2)">
-                        <img src="/EcoCine/peliculas/src/michael.jpg" alt="movie2">
+                        <img src="peliculas/src/michael.jpg" alt="movie2">
                     </button>
                     <button class="btn-movie" onclick="setPelicula(3)">
-                        <img src="/EcoCine/peliculas/src/smgalaxy.jpg" alt="movie3">
+                        <img src="peliculas/src/smgalaxy.jpg" alt="movie3">
                     </button>
                 </article>
             </section>
@@ -35,7 +34,7 @@
 
             <section class="card card-1">
                 <div class="div-img div-img-normal">
-                    <img src="/EcoCine/src/banner.jpg" alt="Películas">
+                    <img src="src/peliculas.jpg" alt="Películas">
                 </div>
                 <div class="div-info">
                     <button class="div-logo page-btn icon bg-2">
@@ -46,14 +45,14 @@
                         <p>
                             Descubre la cartelera completa con estrenos, próximas funciones y tus géneros favoritos.
                         </p>
-                        <a class="page-a page-btn bg-1" href="/EcoCine/peliculas/">Explorar peliculas &RightArrow;</a>
+                        <a class="page-a page-btn bg-1" href="peliculas/">Explorar peliculas &RightArrow;</a>
                     </div>
                 </div>
             </section>
 
             <section class="card card-1 flex-reverse">
                 <div class="div-img div-img-reverse">
-                    <img src="/EcoCine/cines/src/limacentro.jpg" alt="Cines">
+                    <img src="src/cines.jpg" alt="Cines">
                 </div>
                 <div class="div-info">
                     <button class="div-logo page-btn icon bg-2">
@@ -64,14 +63,14 @@
                         <p>
                             Encuentra nuestras sedes ecoamigables cerca de ti y disfruta de la mejor experiencia.
                         </p>
-                        <a class="page-a page-btn bg-1" href="/EcoCine/cines/">Ver cines &RightArrow;</a>
+                        <a class="page-a page-btn bg-1" href="cines/">Ver cines &RightArrow;</a>
                     </div>
                 </div>
             </section>
 
             <section class="card card-1">
                 <div class="div-img div-img-normal">
-                    <img src="/EcoCine/dulceria/src/banner.jpg" alt="Dulcería">
+                    <img src="src/dulceria.jpg" alt="Dulcería">
                 </div>
                 <div class="div-info">
                     <button class="div-logo page-btn icon bg-2">
@@ -82,16 +81,15 @@
                         <p>
                             Acompaña tu función con opciones deliciosas y sostenibles. ¡Cuidamos el planeta en cada detalle!
                         </p>
-                        <a class="page-a page-btn bg-1" href="/EcoCine/dulceria">Ver dulcería &RightArrow;</a>
+                        <a class="page-a page-btn bg-1" href="dulceria">Ver dulcería &RightArrow;</a>
                     </div>
                 </div>
             </section>
             
             <section class="card card-1 flex-reverse">
                 <div class="div-img div-img-reverse">
-                    <img src="/EcoCine/promociones/src/promos.jpeg" alt="Cines">
+                    <img src="src/promociones.jpg" alt="Cines">
                 </div>
-                <div class="div-info">
                     <button class="div-logo page-btn icon bg-2">
                         <i id="icon-promos"></i>
                     </button>
@@ -100,7 +98,7 @@
                         <p>
                             Aprovecha nuestras promociones exclusivas y beneficios especiales para ti.
                         </p>
-                        <a class="page-a page-btn bg-1" href="/EcoCine/promociones/">Ver promociones &RightArrow;</a>
+                        <a class="page-a page-btn bg-1" href="promociones/">Ver promociones &RightArrow;</a>
                     </div>
                 </div>
             </section>
@@ -110,14 +108,15 @@
         <custom-footer></custom-footer>
         
         <script type="module">
-            import {Reserva} from "/EcoCine/scripts/Reserva.js";
-            const r = new Reserva();
+            import { Reserva } from "/scripts/Reserva.js";
+            import { PeliculaDAO } from "/scripts/PeliculaDAO.js";
 
-            function setPelicula(id){
-                r.movie_id = id;
-                r.seats_ids = [];
-                r.guardarReserva();
-                window.location.href = "/EcoCine/peliculas/pelicula";
+            const top_peliculas = await PeliculaDAO.getTop3();
+            console.log(top_peliculas);
+            async function setPelicula(id){
+                const correcto = await Reserva.setPelicula(id);
+                if (!correcto) window.location.reload();
+                window.location.href = "peliculas/pelicula";
             }
             window.setPelicula = setPelicula;
         </script>

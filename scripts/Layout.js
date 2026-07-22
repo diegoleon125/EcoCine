@@ -4,11 +4,11 @@ class MyHeader extends HTMLElement {
         <div id="page-overlay"></div>
         <nav id="page-menu">
             <ul>
-                <li><a class="page-a" href="/EcoCine/peliculas">Películas</a></li>
-                <li><a class="page-a" href="/EcoCine/cines">Cines</a></li>
-                <li><a class="page-a" href="/EcoCine/dulceria/combos">Dulcería</a></li>
-                <li><a class="page-a" href="/EcoCine/promociones">Promociones</a></li>
-                <li><a class="page-a" href="/EcoCine/contactanos">Contáctanos</a></li>
+                <li><a class="page-a" href="peliculas">Películas</a></li>
+                <li><a class="page-a" href="cines">Cines</a></li>
+                <li><a class="page-a" href="dulceria/">Dulcería</a></li>
+                <li><a class="page-a" href="promociones">Promociones</a></li>
+                <li><a class="page-a" href="contactanos">Contáctanos</a></li>
             </ul>
         </nav>
         <div id="header-space"></div>
@@ -16,8 +16,8 @@ class MyHeader extends HTMLElement {
             <button id="side-menu" class="page-btn header-btn icon">
                 <i id="icon-lines"></i>
             </button>
-            <a class="page-a" href="/EcoCine">
-                <img id="title-menu" src="/EcoCine/src/logo.png" alt="titulo">
+            <a class="page-a" href="/">
+                <img id="title-menu" src="/src/logo.png" alt="titulo">
             </a>
             <div id="page-dropdown">
                 <button id="cart" class="page-btn header-btn icon">
@@ -46,7 +46,7 @@ class MyFooter extends HTMLElement {
         <footer>
             <section class="flex-section">
                 <section>
-                    <img src="/EcoCine/src/logo.png" alt="logo" class="logo">
+                    <img src="src/logo.png" alt="logo" class="logo">
                     <p>En Ecocine creemos que el entretenimiento y el cuidado del planeta pueden ir de la mano.</p>
                     <nav class="flex-section">
                         <a href="https://www.instagram.com/cineplanetoficial/" target="_blank" class="page-btn header-btn icon">
@@ -67,26 +67,26 @@ class MyFooter extends HTMLElement {
                     <h3>Enlaces rápidos</h3>
                     <ul id="footer-list">
                         <li>
-                            <a href="/EcoCine/">Inicio</a>
+                            <a href="">Inicio</a>
                         </li>
                         <li>
-                            <a href="/EcoCine/peliculas">Películas</a>
+                            <a href="peliculas">Películas</a>
                         </li>
                         <li>
-                            <a href="/EcoCine/cines">Cines</a>
+                            <a href="cines">Cines</a>
                         </li>
                         <li>
-                            <a href="/EcoCine/dulceria/combos">Dulcería</a>
+                            <a href="dulceria/combos">Dulcería</a>
                         </li>
                         <li>
-                            <a href="/EcoCine/promociones">Promociones</a>
+                            <a href="promociones">Promociones</a>
                         </li>
                     </ul>
                 </section>
                 <section>
                     <h3>Acerca de nosotros</h3>
                     <p>Somos el primer cine comprometido 100% con el medio ambiente. Salas bien cuidadas, compras sostenibles y experiencias inolvidables.</p>
-                    <a href="/EcoCine/acerca-de-nosotros" class="page-a page-btn bg-1">Conócenos más &rightarrow;</a>
+                    <a href="acerca-de-nosotros" class="page-a page-btn bg-1">Conócenos más &rightarrow;</a>
                 </section>
             </section>
             <section id="footer-end" class="flex-section">
@@ -104,7 +104,7 @@ class MyFooter extends HTMLElement {
 customElements.define('custom-header',MyHeader);
 customElements.define('custom-footer',MyFooter);
 
-import {Reserva} from "/EcoCine/scripts/Reserva.js";
+import { Reserva } from "/scripts/Reserva.js";
 document.addEventListener("DOMContentLoaded", () => {
     let dark = localStorage.getItem("dark-mode");
     if (dark == undefined) dark = "false";
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 cart_output.innerHTML = "Debe añadir compras al carrito primero!";
                 cart_output.classList.add("fade-out");
             } else { */
-                window.location.href = "/EcoCine/pagar";
+                window.location.href = "pagar";
         //}
     };
     cart_output.addEventListener("animationend", () => {
